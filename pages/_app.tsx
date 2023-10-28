@@ -10,7 +10,7 @@ import Head from 'next/head'
 import siteMetadata from '@/data/siteMetadata'
 import { ClientReload } from '@/components/ClientReload'
 import { AnimatePresence } from 'framer-motion'
-import LayoutWrapper from '@/components/LayoutWrapper'
+import LayoutWrapper from '@/components/wrappers/LayoutWrapper'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET

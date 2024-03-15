@@ -1,18 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import Link from 'next/link'
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react'
 
-const CustomLink = ({
-  href,
-  ...rest
-}: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => {
+const CustomLink = ({ href, children, ...rest }) => {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
 
   if (isInternalLink) {
     return (
-      <Link href={href} scroll={false}>
-        <a {...rest} />
+      <Link href={href} scroll={false} {...rest}>
+        {children}
       </Link>
     )
   }
